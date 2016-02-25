@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Cadastro disciplina</title>
+</h:head>
+<h:body>
+	<ui:include src="Nav.xhtml" />
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-xs-12 col-sm-12">
+				<h2>Curso - #{boletimBean.curso.nome}</h2>
+				<h:dataTable class="table" value="#{boletimBean.disciplinas}" var="disciplina">
+					<h:column>
+						<f:facet name="header">
+							Nome
+						</f:facet>
+						<h:outputText value="#{disciplina.nome}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Endereco
+						</f:facet>
+						<h:outputText value="#{disciplina.professor}" />
+					</h:column>
+				</h:dataTable>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

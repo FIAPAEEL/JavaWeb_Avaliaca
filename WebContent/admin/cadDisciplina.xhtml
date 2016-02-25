@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Cadastro de Disciplinas</title>
+</h:head>
+<h:body>
+	<ui:include src="Nav.xhtml" />
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-xs-6 col-sm-6">
+				<h:form >
+					<div class="form-group">
+						<h:outputText value="Nome" />
+						<h:inputText class="form-control" value="#{disciplinaBean.disciplina.nome}" />
+					</div>
+					
+					<div class="form-group">
+						<h:outputText value="Escola selecionada" />
+						<h:inputText class="form-control" value="#{param.nomeEscola}" readonly="true"/>
+					</div>
+					
+					<div class="form-group">
+						<h:outputText value="Cursos" />
+						<h:selectOneMenu class="form-control" value="#{disciplinaBean.idCurso}">
+							<f:selectItem itemLabel="Selecione o curso"></f:selectItem>
+							<f:selectItems value="#{disciplinaBean.listCursos}" var="curso" itemLabel="#{curso.nome}" itemValue="#{curso.id}"/>
+						</h:selectOneMenu>
+					</div>							
+					<h:commandButton class="btn btn-default btn-sm" value="Incluir" action="#{disciplinaBean.cadastrarDisciplina()}" >
+						<f:param name="idEsc" value="#{param.idEsc}"></f:param>
+					</h:commandButton>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

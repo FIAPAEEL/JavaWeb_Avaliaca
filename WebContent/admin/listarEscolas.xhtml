@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Cadastro disciplina</title>
+</h:head>
+<h:body>
+	<ui:include src="Nav.xhtml" />
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-xs-12 col-sm-12">
+				<H1>Selecione uma escola</H1>
+				<h:dataTable class="table" value="#{escolaBean.listEscola}" var="escola">
+					<h:column>
+						<f:facet name="header">
+							Nome
+						</f:facet>
+						<h:outputText value="#{escola.nome}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Endereco
+						</f:facet>
+						<h:outputText value="#{escola.endereco}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Selecionar
+						</f:facet>
+						<h:outputLink value="/JavaWeb_Avaliacao/admin/cadDisciplina.faces" >
+						<f:param name="idEsc" value="#{escola.id}"/>
+						<f:param name="nomeEscola" value="#{escola.nome}"/>
+							Selecionar
+						</h:outputLink>
+					</h:column>
+				</h:dataTable>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>

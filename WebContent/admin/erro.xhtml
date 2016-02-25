@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Info</title>
+</h:head>
+<h:body>
+	<ui:include src="Nav.xhtml" />
+	<div class="row">
+	<div class="container">
+			<div class="alert alert-danger">
+				<h1>Erro!</h1>
+				<p>#{mensagem}</p>
+				<p>
+					<a class="btn btn-primary btn-lg" href="#{buttonLink}" role="button">#{buttonText}</a>
+				</p>
+			</div>
+		</div>
+		</div>
+</h:body>
+</html>
